@@ -17,6 +17,28 @@ const options = {
         ],
         components: {
             schemas: {
+                Message: {
+                    type: 'object',
+                    required: ['content', 'sender', 'receiver', 'read', 'createdAt'],
+                    properties: {
+                        content: {
+                            type: 'string',
+                        },
+                        receiverId: {
+                            type: 'string',
+                        },
+                        senderId: {
+                            type: 'string',
+                        },
+                        read: {
+                            type: 'boolean',
+                        },
+                        createdAt: {
+                            type: 'string',
+                            format: 'date-time',
+                        },
+                    },
+                },
                 Packet: {
                     type: 'object',
                     required: ['name', 'description', 'status'],
